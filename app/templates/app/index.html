@@ -2,6 +2,10 @@
 
 {% load static %}
 
+{% block page_js %}
+    <script src="{% static 'app/js/app.js' %}"></script>
+{% endblock %}
+
 {% block page_css %}
     <link rel="stylesheet" href="{% static 'app/css/app.css' %}">
 {% endblock %}
@@ -32,7 +36,8 @@
                         </table>
                     </div>
                     <div>
-                        <form role="form" class="form-horizontal">
+                        <form role="form" class="form-horizontal" id="form">
+                            {% csrf_token %}
                             <div class="form-group">
                                 <input type="email" name="Email" id="email" class="form-control" placeholder="Enter your email address" required/>
                             </div>
