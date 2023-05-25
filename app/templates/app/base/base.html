@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}wingxel{% endblock %}</title>
+    <script src="{% static 'app/js/ven/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'app/js/ven/bootstrap.min.js' %}"></script>
+
+    {% block page_js %}
+    {% endblock %}
+
+    <link rel="stylesheet" href="{% static 'app/css/ven/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/ven/w3css.css' %}">
+
+    {% block page_css %}
+    {% endblock %}
+</head>
+<body>
+
+    {% block body %}
+    {% endblock %}
+    
+</body>
+</html>
