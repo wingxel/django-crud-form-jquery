@@ -19,7 +19,7 @@ $(function () {
                 request.setRequestHeader("X-CSRFToken", csrf);
             },
             success: function (xhr) {
-                alert(`${xhr}`);
+                location.assign("/");
             },
             error: function (xhr) { 
                 alert(`${xhr.status} - ${xhr.statusText}`);
