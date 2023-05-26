@@ -9,6 +9,7 @@ from .models import MyDb
 
 def index(request: WSGIRequest) -> HttpResponse:
     my_db = MyDb.objects.all()
+    print(my_db)
     return render(request, "app/index.html", {
         "user_info": my_db
     })
@@ -27,3 +28,15 @@ class Delete(View):
         data = request.POST
         MyDb.objects.filter(id=data["id"]).delete()
         return HttpResponse("Deleted successfully")
+
+
+class Update(View):
+    def post(self, request: WSGIRequest) -> HttpResponse:
+        data = request.POST
+        record = MyDb.objects.get(id=data["id"])
+        if len(data["username"]) != 0:
+            record.username = data["username"]
+        elif len(data["email"]) != 0:
+            record.email = data["email"]
+        record.save()
+        return HttpResponse("Updated Successfully")

@@ -2,7 +2,7 @@ input {
     margin-bottom: 10px;
 }
 
-.AddForm, .DeleteForm {
+.AddForm, .DeleteForm, .UpdateForm {
     margin-top: 20px;
 }
 

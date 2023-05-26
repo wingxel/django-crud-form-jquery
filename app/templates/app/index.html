@@ -16,9 +16,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
+                    
+                    <form class="d-none">
+                        {% csrf_token %}
+                    </form>
+
                     <div class="AddForm">
-                        <form role="form" class="form-horizontal" id="form">
-                            {% csrf_token %}
+                        <form role="form" class="form-horizontal" id="add_form">
                             <div class="form-group">
                                 <input type="text" name="Username" id="username" class="form-control" placeholder="Enter your username" required>
                             </div>
@@ -31,11 +35,24 @@
                     </div>
                     <div class="DeleteForm">
                         <form role="form" class="form-holizontal" id="delete_form">
-                            {% csrf_token %}
                             <div class="form-group">
                                 <input type="number" name="ID" id="id" class="form-control" placeholder="Enter ID of the record to delete" required>
                             </div>
                             <button id="delete_record" class="btn btn-primary">Delete</button>
+                        </form>
+                    </div>
+                    <div class="UpdateForm" id="update_form">
+                        <form role="form" class="form-horizontal">
+                            <div class="form-group">
+                                <input type="number" name="Update_id" id="update_id" class="form-control" placeholder="Enter record ID" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="Update_uname" id="update_uname" class="form-control" placeholder="Enter new username">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="Update_email" id="update_email" class="form-control" placeholder="Enter new email">
+                            </div>
+                            <button class="btn btn-primary">Update</button>
                         </form>
                     </div>
                 </div>
