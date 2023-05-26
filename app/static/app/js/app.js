@@ -22,10 +22,34 @@ $(function () {
                 location.assign("/");
             },
             error: function (xhr) { 
-                alert(`${xhr.status} - ${xhr.statusText}`);
+                alert(`Error ${xhr.status} - ${xhr.statusText}`);
             }
         });
 
+        submitEvent.preventDefault();
+    });
+
+    $("#delete_form").submit(function (submitEvent) { 
+        let id = $("#id").val();
+        let csrf = $("input[name=csrfmiddlewaretoken]").val();
+        let data = new FormData();
+        data.append("id", id);
+        $.ajax({
+            type: "POST",
+            url: "/delete/",
+            data: data,
+            processData: false,
+            contentType: false,
+            beforeSend: function(request) {
+                request.setRequestHeader("X-CSRFToken", csrf);
+            },
+            success: function (xhr) {
+                location.assign("/");  
+            },
+            error: function (xhr) { 
+                alert(`Error ${xhr.status} - ${xhr.statusText}`);
+            }
+        });
         submitEvent.preventDefault();
     });
  });

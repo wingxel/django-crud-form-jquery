@@ -20,3 +20,10 @@ class Add(View):
         pprint(data)
         MyDb.objects.create(username=data["username"], email=data["email"])
         return HttpResponse("Added successfully!")
+
+
+class Delete(View):
+    def post(self, request: WSGIRequest) -> HttpResponse:
+        data = request.POST
+        MyDb.objects.filter(id=data["id"]).delete()
+        return HttpResponse("Deleted successfully")

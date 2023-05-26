@@ -20,14 +20,22 @@
                         <form role="form" class="form-horizontal" id="form">
                             {% csrf_token %}
                             <div class="form-group">
-                                <input type="text" name="Username" id="username" class="form-control" placeholder="Enter your username" required/>
+                                <input type="text" name="Username" id="username" class="form-control" placeholder="Enter your username" required>
                             </div>
-    
                             <div class="form-group">
-                                <input type="email" name="Email" id="email" class="form-control" placeholder="Enter your email address" required/>
+                                <input type="email" name="Email" id="email" class="form-control" placeholder="Enter your email address" required>
                             </div>
                             
                             <button id="add_another_record" class="btn btn-primary">ADD</button>
+                        </form>
+                    </div>
+                    <div class="DeleteForm">
+                        <form role="form" class="form-holizontal" id="delete_form">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input type="number" name="ID" id="id" class="form-control" placeholder="Enter ID of the record to delete" required>
+                            </div>
+                            <button id="delete_record" class="btn btn-primary">Delete</button>
                         </form>
                     </div>
                 </div>
