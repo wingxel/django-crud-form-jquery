@@ -4,6 +4,7 @@ from django.core.handlers.wsgi import WSGIRequest
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.views import View
 from django.db.models import Q
+from .libs import libs
 
 from .models import MyDb
 
@@ -48,7 +49,7 @@ class Search(View):
             results = MyDb.objects.filter(
                 Q(username__icontains=query_term) | 
                 Q(email__icontains=query_term) |
-                Q(id=query_term)
+                Q(id__contains=query_term)
             )
             return render(request, "app/results.html", {
                 "results": results,
