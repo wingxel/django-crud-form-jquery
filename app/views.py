@@ -4,7 +4,6 @@ from django.core.handlers.wsgi import WSGIRequest
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.views import View
 from django.db.models import Q
-from .libs import libs
 
 from .models import MyDb
 
