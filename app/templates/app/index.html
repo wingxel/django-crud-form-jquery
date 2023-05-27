@@ -62,22 +62,7 @@
                     <hr>
                     <h3>The following is the user info</h3>
                     <hr>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <tr>
-                                <th>ID</th>
-                                <th>USERNAME</th>
-                                <th>EMAIL</th>
-                            </tr>
-                            {% for user_item in user_info %}
-                                <tr>
-                                    <td>{{ user_item.id }}</td>
-                                    <td>{{ user_item.username }}</td>
-                                    <td>{{ user_item.email }}</td>
-                                </tr>
-                            {% endfor %}
-                        </table>
-                    </div>
+                    {% include "app/includes/table.html" with users_list=user_info %}
                 </div>
             </div>
         </div>

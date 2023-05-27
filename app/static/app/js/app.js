@@ -64,13 +64,13 @@ $(function () {
         submitEvent.preventDefault();
     });
 
-    $("#search-form").submit(function (submitEvent) { 
-        let term = $("#search").val();
-        let data = new FormData();
-        data.append("term", term);
+    // $("#search-form").submit(function (submitEvent) { 
+    //     let term = $("#search").val();
+    //     let data = new FormData();
+    //     data.append("term", term);
 
-        myAjax(data, "/search/", "POST", csrf);
+    //     myAjax(data, "/search/", "POST", csrf);
 
-        submitEvent.preventDefault();
-    });
+    //     submitEvent.preventDefault();
+    // });
 });

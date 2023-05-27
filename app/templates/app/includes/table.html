@@ -1,0 +1,16 @@
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>USERNAME</th>
+            <th>EMAIL</th>
+        </tr>
+        {% for user_item in users_list %}
+            <tr>
+                <td>{{ user_item.id }}</td>
+                <td>{{ user_item.username }}</td>
+                <td>{{ user_item.email }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>

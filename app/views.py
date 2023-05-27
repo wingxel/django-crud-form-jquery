@@ -1,8 +1,9 @@
 from pprint import pprint
 from django.shortcuts import render, get_object_or_404
 from django.core.handlers.wsgi import WSGIRequest
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, HttpResponseBadRequest
 from django.views import View
+from django.db.models import Q
 
 from .models import MyDb
 
@@ -38,3 +39,17 @@ class Update(View):
             record.email = data["email"]
         record.save()
         return HttpResponse("Updated Successfully")
+
+
+class Search(View):
+    def get(self, request:WSGIRequest) -> HttpResponse:
+        try:
+            query_term = request.GET["q"]
+            results = MyDb.objects.filter(Q(username__icontains=query_term) | Q(email__icontains=query_term))
+            return render(request, "app/results.html", {
+                "results": results,
+                "title": "Results",
+                "query": query_term
+            })
+        except Exception as err:
+            return HttpResponseBadRequest(f"Bad request - {str(err)}")
