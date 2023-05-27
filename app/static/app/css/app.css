@@ -9,3 +9,7 @@ input {
 body {
     font-family: 'Courier New', Courier, monospace;
 }
+
+main {
+    margin-top: 65px;
+}

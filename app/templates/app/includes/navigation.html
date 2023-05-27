@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
 
         <a class="navbar-brand" href="#">WINGXEL</a>
@@ -10,16 +10,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 me-auto mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'index_page' %}">Home</a>
+                    <a class="nav-link text-light" href="{% url 'index_page' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Downloads</a>
+                    <a class="nav-link text-light" href="#">Downloads</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contacts</a>
+                    <a class="nav-link text-light" href="#">Contacts</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Options</a>
+                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Options</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#">Option 1</a></li>
                         <li><a class="dropdown-item" href="#">Option 2</a></li>
@@ -30,16 +30,16 @@
             </ul>
 
             <form class="d-flex" id="search-form" method="GET" action="/search">
-                <input class="form-control me-2" type="search" value="{{ query }}" name="q" id="search" placeholder="Search" aria-label="Search" required>
-                <input type="submit" value="Search" class="btn btn-outline-success">
+                <input class="form-control me-2 bg-dark text-light" type="search" value="{{ query }}" name="q" id="search" placeholder="Search" aria-label="Search" required>
+                <input type="submit" value="Search" class="btn btn-outline-light">
             </form>
 
             <ul class="navbar-nav mb-2 ms-auto mb-lg-0">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Login</a>
+                    <a href="#" class="nav-link text-light">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Logout</a>
+                    <a href="#" class="nav-link text-light">Logout</a>
                 </li>
             </ul>
         </div>

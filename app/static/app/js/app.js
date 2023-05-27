@@ -1,6 +1,6 @@
 "use strict";
 
-function myAjax(data, url, method, csrf_token) {
+function myAjax(data, url, method, csrf_token, nextUrl="/") {
     $.ajax({
         type: method,
         url: url,
@@ -11,7 +11,7 @@ function myAjax(data, url, method, csrf_token) {
             request.setRequestHeader("X-CSRFToken", csrf_token);
         },
         success: function (xhr) {
-            location.assign(`/?result=${xhr}`);
+            location.assign(nextUrl);
         },
         error: function (xhr) {
             alert(`Error ${xhr.status} - ${xhr.statusText}`);
