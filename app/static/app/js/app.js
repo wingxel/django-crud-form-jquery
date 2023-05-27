@@ -64,13 +64,15 @@ $(function () {
         submitEvent.preventDefault();
     });
 
-    // $("#search-form").submit(function (submitEvent) { 
-    //     let term = $("#search").val();
-    //     let data = new FormData();
-    //     data.append("term", term);
+    $("#create").click(function (clickEvent) { 
+        clickEvent.preventDefault();
+    });
 
-    //     myAjax(data, "/search/", "POST", csrf);
+    $("#update").click(function (clickEvent) { 
+        clickEvent.preventDefault();
+    });
 
-    //     submitEvent.preventDefault();
-    // });
+    $("#delete").click(function (clickEvent) { 
+        clickEvent.preventDefault();
+    });
 });

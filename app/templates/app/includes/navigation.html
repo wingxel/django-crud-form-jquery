@@ -13,23 +13,17 @@
                     <a class="nav-link text-light" href="{% url 'index_page' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Downloads</a>
+                    <a class="nav-link text-light" href="#" id="create">Create</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Contacts</a>
+                    <a class="nav-link text-light" href="#" id="update">Update</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Options</a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Option 1</a></li>
-                        <li><a class="dropdown-item" href="#">Option 2</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Overall</a></li>
-                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#" id="delete">Delete</a>
                 </li>
             </ul>
 
-            <form class="d-flex" id="search-form" method="GET" action="/search">
+            <form class="d-flex mx-auto" id="search-form" method="GET" action="/search">
                 <input class="form-control me-2 bg-dark text-light" type="search" value="{{ query }}" name="q" id="search" placeholder="Search" aria-label="Search" required>
                 <input type="submit" value="Search" class="btn btn-outline-light">
             </form>
