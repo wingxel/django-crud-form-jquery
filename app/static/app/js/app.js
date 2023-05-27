@@ -63,4 +63,8 @@ $(function () {
 
         submitEvent.preventDefault();
     });
+
+    $("#search-form").submit(function (submitEvent) { 
+        submitEvent.preventDefault();
+    });
 });

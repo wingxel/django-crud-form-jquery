@@ -1,5 +1,5 @@
 from pprint import pprint
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.core.handlers.wsgi import WSGIRequest
 from django.http import HttpResponse, Http404
 from django.views import View
@@ -23,25 +23,18 @@ class Add(View):
 
 class Delete(View):
     def post(self, request: WSGIRequest) -> HttpResponse:
-        data = request.POST
-        try:
-            result = MyDb.objects.get(id=data["id"])
-            result.delete()
-        except MyDb.DoesNotExist:
-            raise Http404(f"Item {data['id']} Not Found!")
+        result = get_object_or_404(MyDb, id=request.POST["id"])
+        result.delete()
         return HttpResponse("Deleted successfully")
 
 
 class Update(View):
     def post(self, request: WSGIRequest) -> HttpResponse:
         data = request.POST
-        try:
-            record = MyDb.objects.get(id=data["id"])
-            if len(data["username"]) != 0:
-                record.username = data["username"]
-            if len(data["email"]) != 0:
-                record.email = data["email"]
-            record.save()
-        except MyDb.DoesNotExist:
-            raise Http404(f"Item {data['id']} Not Found!")
+        record = get_object_or_404(MyDb, id=data["id"])
+        if len(data["username"]) != 0:
+            record.username = data["username"]
+        if len(data["email"]) != 0:
+            record.email = data["email"]
+        record.save()
         return HttpResponse("Updated Successfully")

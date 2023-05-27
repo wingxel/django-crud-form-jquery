@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+
+        <a class="navbar-brand" href="#">WINGXEL</a>
+
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 me-auto mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'index_page' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Downloads</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contacts</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Options</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Option 1</a></li>
+                        <li><a class="dropdown-item" href="#">Option 2</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Overall</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <form class="d-flex" id="search-form">
+                <input class="form-control me-2" type="search" name="Search" id="search" placeholder="Search" aria-label="Search">
+                <input type="submit" value="Search" class="btn btn-outline-success">
+            </form>
+
+            <ul class="navbar-nav mb-2 ms-auto mb-lg-0">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Logout</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
