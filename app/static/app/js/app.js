@@ -65,6 +65,12 @@ $(function () {
     });
 
     $("#search-form").submit(function (submitEvent) { 
+        let term = $("#search").val();
+        let data = new FormData();
+        data.append("term", term);
+
+        myAjax(data, "/search/", "POST", csrf);
+
         submitEvent.preventDefault();
     });
 });
