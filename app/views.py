@@ -45,7 +45,11 @@ class Search(View):
     def get(self, request:WSGIRequest) -> HttpResponse:
         try:
             query_term = request.GET["q"]
-            results = MyDb.objects.filter(Q(username__icontains=query_term) | Q(email__icontains=query_term))
+            results = MyDb.objects.filter(
+                Q(username__icontains=query_term) | 
+                Q(email__icontains=query_term) |
+                Q(id=query_term)
+            )
             return render(request, "app/results.html", {
                 "results": results,
                 "title": "Results",
